@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -16,5 +17,9 @@ public class ProductService {
 
     public List<Product> getAllProducts(){
         return repo.findAll();
+    }
+
+    public Optional<Product> getProductById(int id) {
+        return repo.findById(id);
     }
 }
